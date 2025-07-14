@@ -14,7 +14,7 @@ export function AnalitosForm({ matriz, onAnalitosChange }) {
   useEffect(() => {
     setSeleccionados([]);
     if (onAnalitosChange) {
-      onAnalitosChange([]); // Reset al cambiar matriz
+      onAnalitosChange([]); 
     }
   }, [matriz]);
 

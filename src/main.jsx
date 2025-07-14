@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx'; // ✅ importación por defecto
+import App from './App.jsx'; 
 import './index.css';
 import './componentes/Styles.css';
 
