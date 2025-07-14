@@ -1,0 +1,46 @@
+/* Reset y altura total */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #242424;
+}
+
+/* Navbar fijo */
+nav {
+  flex-shrink: 0;
+}
+
+/* Contenido principal */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  margin-top: 60px;
+  color: white;
+}
+
+/* Footer */
+footer {
+  background-color: #3f5bd8;
+  color: white;
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* Secciones centrales como Inicio */
+section {
+  max-width: 800px;
+  margin: auto;
+}
