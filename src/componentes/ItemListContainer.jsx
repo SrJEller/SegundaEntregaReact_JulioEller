@@ -5,7 +5,7 @@ import { ItemList } from "./ItemList";
 
 export function ItemListContainer() {
   const [items, setItems] = useState([]);
-  const { id } = useParams(); // categoría
+  const { id } = useParams(); 
 
   useEffect(() => {
     const fetchData = new Promise((resolve) => {

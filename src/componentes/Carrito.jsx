@@ -1,5 +1,5 @@
 export function Carrito({ items }) {
-  console.log("Items en el carrito:", items); // <- Agregá esto temporalmente
+  console.log("Items en el carrito:", items); 
 
   if (!items || items.length === 0) {
     return <section><h3>No hay muestras en el carrito.</h3></section>;

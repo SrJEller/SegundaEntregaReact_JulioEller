@@ -1,11 +1,10 @@
-/* Reset y altura total */
+
 html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* Contenedor principal */
 .app-wrapper {
   display: flex;
   flex-direction: column;
@@ -13,12 +12,10 @@ html, body, #root {
   background-color: #242424;
 }
 
-/* Navbar fijo */
 nav {
   flex-shrink: 0;
 }
 
-/* Contenido principal */
 main {
   flex: 1;
   display: flex;
@@ -29,7 +26,6 @@ main {
   color: white;
 }
 
-/* Footer */
 footer {
   background-color: #3f5bd8;
   color: white;
@@ -39,7 +35,6 @@ footer {
   margin-top: auto;
 }
 
-/* Secciones centrales como Inicio */
 section {
   max-width: 800px;
   margin: auto;
