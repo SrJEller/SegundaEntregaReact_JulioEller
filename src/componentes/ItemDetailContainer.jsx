@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { productos } from "../data/productos";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 import { ItemDetail } from "./ItemDetail";
 
 export function ItemDetailContainer() {
@@ -8,13 +9,19 @@ export function ItemDetailContainer() {
   const [producto, setProducto] = useState(null);
 
   useEffect(() => {
-    const fetchItem = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(productos.find((prod) => prod.id === id));
-      }, 500);
-    });
+    const productoRef = doc(db, "productos", id);
 
-    fetchItem.then((res) => setProducto(res));
+    getDoc(productoRef)
+      .then((res) => {
+        if (res.exists()) {
+          setProducto({ id: res.id, ...res.data() });
+        } else {
+          console.warn("Producto no encontrado en Firebase");
+        }
+      })
+      .catch((error) =>
+        console.error("Error al cargar producto desde Firebase:", error)
+      );
   }, [id]);
 
   return producto ? <ItemDetail {...producto} /> : <p>Cargando producto...</p>;

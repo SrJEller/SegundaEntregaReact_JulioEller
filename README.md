@@ -1,3 +1,12 @@
+royecto Final - E-commerce con React y Firebase
+El siguiente prototipo de página e-comerce, es un ejemplo de construcción básica utilizando herramientas de React-js con la concatenación de algunos elementos como Firebase.  
+El presente sitio web, simula los flujos que podría tener un usuario para obtener una cotización siendo cliente de un laboratorio de análisis físicos-químicos.
+
+Para más información, conactar con julioellejyg@gmail.com 
+Tel:+5493885071292
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

@@ -64,11 +64,11 @@ nav {
 
 
 body {
-  background-image: url('/src/assets/fondo-lab.png');
-  background-size: cover;
+  /* background-image: url('/src/assets/fondo-lab.png'); */
+  /* background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  font-family: sans-serif;
+  font-family: sans-serif; */
 }
 
 
@@ -175,3 +175,69 @@ body {
     font-size: 1.1rem;
   }
 }
+
+.item-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0;
+}
+
+/* Fila de botones + contador */
+.item-count > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Botones + y - */
+.item-count button {
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+/* Hover claro */
+.item-count button:hover {
+  background-color: #ddd;
+}
+
+/* Número de cantidad */
+.item-count span {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Reset total del input si se usa */
+.item-count input {
+  all: unset;
+}
+
+/* Elimina pseudoelementos decorativos si los hubiese */
+.item-count::before,
+.item-count::after,
+.item-count button::before,
+.item-count button::after {
+  display: none !important;
+  content: none !important;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+

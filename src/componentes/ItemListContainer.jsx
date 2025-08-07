@@ -1,30 +1,31 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { productos } from "../data/productos";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 import { ItemList } from "./ItemList";
 
 export function ItemListContainer() {
-  const [items, setItems] = useState([]);
-  const { id } = useParams(); 
+  const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    const fetchData = new Promise((resolve) => {
-      setTimeout(() => {
-        if (id) {
-          resolve(productos.filter(prod => prod.categoria === id));
-        } else {
-          resolve(productos);
-        }
-      }, 500);
-    });
+    const productosRef = collection(db, "productos");
 
-    fetchData.then((res) => setItems(res));
-  }, [id]);
+    getDocs(productosRef)
+      .then((res) => {
+        const productosFirebase = res.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setProductos(productosFirebase);
+      })
+      .catch((error) =>
+        console.error("Error al cargar productos desde Firebase:", error)
+      );
+  }, []);
 
   return (
     <section>
       <h2>Catálogo de Productos</h2>
-      <ItemList items={items} />
+      <ItemList productos={productos} />
     </section>
   );
 }

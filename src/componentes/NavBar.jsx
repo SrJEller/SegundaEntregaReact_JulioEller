@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { CartWidget } from "./CartWidget";
 import "./Styles.css";
+import { useCart } from "./CartContext"; 
 
-export function NavBar({ totalItems }) {
+export function NavBar() {
+  const { totalItems } = useCart(); 
+
   return (
     <nav>
       <div className="nav-content">

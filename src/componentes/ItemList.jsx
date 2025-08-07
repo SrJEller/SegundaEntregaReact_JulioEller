@@ -1,9 +1,11 @@
 import { Item } from "./Item";
 
-export function ItemList({ items }) {
+export function ItemList({ productos = [] }) {
+  if (!productos.length) return <p>Cargando productos...</p>;
+
   return (
     <div className="item-list">
-      {items.map((prod) => (
+      {productos.map((prod) => (
         <Item key={prod.id} {...prod} />
       ))}
     </div>
